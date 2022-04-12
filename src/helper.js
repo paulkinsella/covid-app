@@ -154,7 +154,7 @@ export const updateRegional = (setisRegional, isRegional) => {
   setisRegional(!isRegional);
 };
 
-const getRegionFilter = (region, updateRegional, currentRegionData) => {
+const getRegionFilter = (region, updateRegional) => {
   return region ? region.map((item) => (
     <>
       <option>{item.provinceState}</option>
@@ -166,10 +166,7 @@ export const getRegionalData = (region, updateRegional, country, isRegional, cur
   const regionName = region[0] ? region[0].countryRegion : ' ';
   if (region && region.length > 1 && regionName === country) {
     return <div onClick={updateRegional} className='regional-data'>
-      {isRegional ? 'Hide' : 'See'} more information
       <select onChange={(e) => {
-        console.log('Test', e.target.value);
-        console.log('Region', region);
         const result = region.filter((item) => (
           item.provinceState === e.target.value
         ));
@@ -184,11 +181,10 @@ export const getRegionalData = (region, updateRegional, country, isRegional, cur
   }
 };
 
-export const test = (currentRegionData, data, globalData) => {
+export const getRegionStats = (currentRegionData, data, globalData) => {
   const name = currentRegionData[0] ? currentRegionData[0].provinceState : '';
   const deaths = currentRegionData[0] ? currentRegionData[0].deaths : '';
   const confirm = currentRegionData[0] ? currentRegionData[0].confirmed : '';
-  // console.log('BLAH', currentRegionData[0]['provinceState']);
   return (
     <div className='results-container'>
       <div className='output-card'>
