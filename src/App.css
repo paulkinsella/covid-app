@@ -1,21 +1,133 @@
 .App {
+  background-color: cadetblue;
+  background-size: cover; 
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.page-container {
+  padding: 10px;
+}
+
+.globe-container {
+  width: 80%;
+  margin: auto;
+}
+
+.input-container {
+  width: 600px;
+  background-color: #f1f5f8;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+
+.custom-input {
+  background-color: #f1f5f8;
+  width: 250px;
+  height: 50px;
+  margin-top: 25px;
+  border-radius: 10px;
+}
+
+.globe-image {
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+
+.pick-search {
+  width: 50px;
+  background-color: #03a9f4;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.custom-button {
+  background-color: #03a9f4;
+  width: 250px;
+  height: 51px;
+  display: block;
+  /* margin: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.custom-button:hover {
+  background-color: #2196f3;
+}
+
+.results-container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.output-card {
+  width: 100%;
+  margin: auto;
+  background-color: #f1f5f8;
+  border-radius: 10px;
+  color: black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.custom-cell {
+  text-align: center;
+  width: 50%;
+  font-size: 16px;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.output-cell {
+  text-align: center;
+  height: 100px;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
 }
+
+.input-row {
+  display: flex;
+}
+
+.fa-filter {
+  padding-top: 10px;
+}
+
+.fa-search {
+  padding-top: 10px;
+}
+
+.date-container {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.regional-data {
+  cursor: pointer;
+}
+
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +136,36 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+@media only screen and (max-width: 800px) {
+  .input-container {
+    margin-top: 75px;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .globe-image {
+    width: 200px;
+    display: block;
+    margin: auto;
   }
+
+  
 }
