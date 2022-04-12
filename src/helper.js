@@ -70,7 +70,7 @@ export const getGlobalDate = (globalData) => {
     default:
   }
   const dayDate = globalDate.getDate();
-  const currentdate = day + ' ' + dayDate + ' ' + month + ' ' + year;
+  const currentdate = day + ' ' + dayDate + 'th' + ' ' + month + ' ' + year;
   return currentdate;
 };
 
@@ -146,7 +146,7 @@ export const getCountryDate = (data) => {
     default:
   }
   const dayDate = countryDate.getDate();
-  const currentdate = day + ' ' + dayDate + ' ' + month + ' ' + year;
+  const currentdate = day + ' ' + dayDate + 'th' + ' ' + month + ' ' + year;
   return currentdate;
 };
 
@@ -166,7 +166,7 @@ export const getRegionalData = (region, updateRegional, country, isRegional, cur
   const regionName = region[0] ? region[0].countryRegion : ' ';
   if (region && region.length > 1 && regionName === country) {
     return <div onClick={updateRegional} className='regional-data'>
-      <select onChange={(e) => {
+      <select className='custom-input' onChange={(e) => {
         const result = region.filter((item) => (
           item.provinceState === e.target.value
         ));

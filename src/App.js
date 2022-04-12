@@ -56,6 +56,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className='header'></div>
       <div className='page-container'>
         <div className='globe-container'>
           <img className='globe-image' src={globe} alt='globe' />
