@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import CountryInput from './CountryInput';
 import globe from './images/globe.png';
-import { getGlobalDate, getCountryDate, test, getRegionalData } from './helper.js';
+import { getGlobalDate, getCountryDate, getRegionStats, getRegionalData } from './helper.js';
 
 function App() {
   const [data, setData] = useState([]);
@@ -20,7 +20,6 @@ function App() {
   const globalDeaths = globalData.deaths ? globalData.deaths.value.toLocaleString() : '';
   const countryConfirmed = data.confirmed ? data.confirmed.value.toLocaleString() : '';
   const globalConfirmed = globalData.confirmed ? globalData.confirmed.value.toLocaleString() : '';
-  console.log('currentRegionData', currentRegionData);
 
   useEffect(() => {
     fetch(url)
@@ -124,7 +123,7 @@ function App() {
               : data.error.message}
           </div>
           {getRegionalData(region, updateRegional, country, isRegional, currentRegionData, setCurrentRegionData)}
-          {isRegional ? test(currentRegionData, data, region, globalData) : ''}
+          {isRegional ? getRegionStats(currentRegionData, data, region, globalData) : ''}
         </div>
       </div>
     </div>
