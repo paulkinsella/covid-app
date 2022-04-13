@@ -165,12 +165,13 @@ const getRegionFilter = (region, updateRegional) => {
 export const getRegionalData = (region, updateRegional, country, isRegional, currentRegionData, setCurrentRegionData) => {
   const regionName = region[0] ? region[0].countryRegion : ' ';
   if (region && region.length > 1 && regionName === country) {
-    return <div onClick={updateRegional} className='regional-data'>
+    return <div className='regional-data'>
       <select className='custom-input' onChange={(e) => {
         const result = region.filter((item) => (
           item.provinceState === e.target.value
         ));
         setCurrentRegionData(result);
+        updateRegional();
       }}>
         <option>Select A Region</option>
         {getRegionFilter(region, updateRegional)}
